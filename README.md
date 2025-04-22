@@ -79,8 +79,8 @@ math_agent = MicroAgent(
     llm=llm,
     prompt="You are a math assistant. Handle basic arithmetic operations.",
     toolsList=[
-        Tool("add", "Add two numbers", add_numbers),
-        Tool("multiply", "Multiply two numbers", multiply_numbers)
+        Tool(description="Add two numbers", func=add_numbers),
+        Tool(description="Multiply two numbers", func=multiply_numbers)
     ]
 )
 
@@ -130,8 +130,8 @@ simple_math_agent = MicroAgent(
     llm=llm,
     prompt="You are a simple math assistant. Handle basic arithmetic operations.",
     toolsList=[
-        Tool("add", "Add two numbers", add_numbers),
-        Tool("multiply", "Multiply two numbers", multiply_numbers)
+        Tool(description="Add two numbers", func=add_numbers),
+        Tool(description="Multiply two numbers", func=multiply_numbers)
     ]
 )
 
@@ -139,7 +139,7 @@ advanced_math_agent = MicroAgent(
     llm=llm,
     prompt="You are an advanced math assistant. Handle complex math operations.",
     toolsList=[
-        Tool("factorial", "Calculate factorial", factorial)
+        Tool(description="Calculate factorial", func=factorial)
     ]
 )
 

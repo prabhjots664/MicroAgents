@@ -13,8 +13,8 @@ from .message_store import MessageStore
 class Tool:
     """Base class for microAgents tools."""
     
-    def __init__(self, name: str, description: str, func: Callable):
-        self.name = name
+    def __init__(self, description: str, func: Callable, name: str = None):
+        self.name = name or func.__name__
         self.description = description
         self.func = func
         self.parameters = self._extract_parameters()
