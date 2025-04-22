@@ -11,30 +11,27 @@ A lightweight LLM orchestration framework for building Multi-Agent AI systems. T
 
 ## Framework Comparison
 
-| Framework    | Package Size | Core Features | Key Differentiator | Trade-offs |
-|-------------|--------------|---------------|-------------------|------------|
-| 🚀 microAgents | **< 1MB**    | • Simple Agent & Tool Model<br>• XML-based Function Calls<br>• Universal LLM Support | **✨ Enables tool calling for ANY LLM**<br>**✨ Works with any OpenAI-compatible API**<br>**✨ Most lightweight solution** | • Bring your own tools |
-| LangChain    | 166MB+       | • Complex Agent & Chain Model<br>• JSON-based Function Calls | Rich ecosystem & tooling | • Heavy footprint<br>• Complex setup |
-| CrewAI       | 173MB+       | • Role-based Agents<br>• Built-in Collaboration | Agent collaboration patterns | • Complex hierarchies<br>• Heavy dependencies |
-| LangGraph    | 51MB+        | • DAG-based Flows<br>• Graph Orchestration | Complex workflow support | • Steep learning curve<br>• Complex configuration |
-| AutoGen      | 26MB+        | • Modular Agents<br>• Flexible Architecture | Extensible design | • Limited built-in tools |
+| Framework   | Core Abstractions | Size & Complexity | Dependencies & Integration | Key Advantages | Limitations/Trade-offs |
+|------------|------------------|-------------------|---------------------------|----------------|----------------------|
+| LangChain  | Agent, Chain    | 405K LOC<br>+166MB | Many vendor wrappers<br>(OpenAI, Pinecone, etc)<br>Many app wrappers (QA, Summarization) | Rich ecosystem<br>Extensive tooling<br>Large community | Heavy footprint<br>Complex setup<br>JSON schema based |
+| CrewAI     | Agent, Chain    | 18K LOC<br>+173MB | Many vendor & app wrappers<br>(OpenAI, Anthropic, etc) | Role-based agents<br>Built-in collaboration | Complex hierarchies<br>Heavy dependencies |
+| SmolAgent  | Agent           | 8K LOC<br>+198MB | Some integrations<br>(DuckDuckGo, HuggingFace) | Simplified agent design | Limited tool ecosystem<br>Large package size |
+| LangGraph  | Agent, Graph    | 37K LOC<br>+51MB | Some DB integrations<br>(PostgresStore, SqliteSaver) | Graph-based flows<br>DAG support | Complex DAG definitions<br>JSON schema based |
+| AutoGen    | Agent           | 7K LOC<br>+26MB (core) | Optional integrations<br>(OpenAI, Pinecone) | Lightweight core<br>Modular design | Limited built-in tools |
+| microAgents| Agent, Tool     | ~2K LOC<br><1MB | Minimal<br>(requests, urllib3) | ✓ Universal tool calling<br>✓ XML-based format<br>✓ Ultra lightweight<br>✓ Simple integration<br>✓ Any OpenAI-compatible LLM | Bring your own tools<br>No built-in vendors |
 
-### Why microAgents Stands Out
 
-✅ **Ultra Lightweight**
-- **Just 2K lines** of code vs 405K+ in alternatives
-- **Under 1MB** vs 26MB-173MB for others
-- Only two dependencies: `requests` & `urllib3`
 
-✅ **Universal Compatibility**
-- Works with **ANY** OpenAI-compatible API
-- Enables tool calling even for LLMs without native support
-- No vendor lock-in
 
-✅ **Developer Experience**
-- Intuitive XML-based tool calls
-- Simple integration without wrapper classes
-- Clean, minimalist API design
+
+### Key Differentiators
+
+- **Ultra Lightweight**: microAgents is <1MB, compared to hundreds of MB for other frameworks
+- **Universal Compatibility**: Works with any OpenAI-compatible API endpoint
+- **XML Tool Calls**: More readable and intuitive than JSON schemas
+- **Minimal Dependencies**: Only core HTTP libraries required
+- **Simple Integration**: Direct function integration without wrapper classes
+- **LLM Agnostic**: Works with any LLM that follows OpenAI's API format, including those without native function calling
 
 ## Installation
 
