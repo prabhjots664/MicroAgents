@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="microAgents",
-    version="1.3.3",
+    version="1.3.4",
     author="MicroAgents Team",
     author_email="prabhjots664@gmail.com",
     description="A lightweight LLM orchestration framework for building Multi-Agent AI systems.",
