@@ -197,6 +197,14 @@ This example demonstrates:
 
 - `math_demo.py`: Basic math operations using tool calls
 
+
+## Contributors
+
+- [prabhjots664](https://github.com/prabhjots664)
+- [shera2018](https://github.com/shera2018)
+- [kamaldeepzsingh](https://github.com/kamaldeepzsingh)
+  
+
 ## License
 
 MIT License
