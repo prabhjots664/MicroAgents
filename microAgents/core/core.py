@@ -8,7 +8,7 @@ import inspect
 from xml.etree import ElementTree as ET
 from microAgents.llm.llm import LLM
 from microAgents.llm.prompt import get_postfix_system_prompt
-from .message_store import MessageStore
+from .message_store import BaseMessageStore
 
 class Tool:
     """Base class for microAgents tools."""
@@ -48,7 +48,7 @@ class MicroAgent:
         for tool in toolsList:
             self.register_tool(tool)
             
-    def execute_agent(self, user_input: str, message_store: MessageStore) -> str:
+    def execute_agent(self, user_input: str, message_store: BaseMessageStore) -> str:
         """Execute the agent's reasoning and tool usage."""
         # print(f"\nDEBUG: Starting execute_agent with input: {user_input}")
         

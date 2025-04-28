@@ -1,7 +1,7 @@
 """Simple end-to-end demo with math agents and orchestrator."""
 
 from microAgents.llm import LLM
-from microAgents.core import MicroAgent, Tool, MessageStore
+from microAgents.core import MicroAgent, Tool, BaseMessageStore
 
 # Initialize LLM
 math_llm = LLM(
@@ -66,7 +66,7 @@ Always output exactly one of these three options, nothing else.""",
         self.simple_math_agent = simple_math_agent
         self.advanced_math_agent = advanced_math_agent
 
-    def execute_agent(self, query: str, message_store: MessageStore) -> str:
+    def execute_agent(self, query: str, message_store: BaseMessageStore) -> str:
         """Handle full query flow through orchestrator."""
         print(f"\nDebug: Orchestrator analyzing query: {query}")
         
@@ -92,7 +92,7 @@ Always output exactly one of these three options, nothing else.""",
         return f"Orchestrator: Result from {agent_name}:\n{result}"
 
 def main():
-    message_store = MessageStore()
+    message_store = BaseMessageStore()
     orchestrator = Orchestrator()
     
     # Example queries that demonstrate XML-style tool calls
